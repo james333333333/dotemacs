@@ -25,7 +25,7 @@
 (scroll-bar-mode -1)
 
 (load-theme 'wombat)
-(set-frame-font "monospace-13")
+(add-to-list 'default-frame-alist '(font . "monospace-13"))
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
