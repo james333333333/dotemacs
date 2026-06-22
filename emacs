@@ -20,11 +20,12 @@
 (fido-mode)
 (delete-selection-mode)
 (column-number-mode)
+(display-time)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
-(load-theme 'wombat)
+(load-theme 'modus-vivendi)
 (add-to-list 'default-frame-alist '(font . "monospace-13"))
 
 (put 'upcase-region 'disabled nil)
@@ -36,6 +37,9 @@
                   (interactive)
                   (delete-indentation -1)))
 
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
 (use-package dired
   :config
   (setq-default dired-dwim-target t))
@@ -45,9 +49,6 @@
   (ispell-dictionary "en_AU")
   :hook
   (text-mode . flyspell-mode))
-
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (use-package magit
   :ensure t)
